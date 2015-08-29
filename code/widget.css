@@ -1,0 +1,89 @@
+
+#textBox
+{
+    word-wrap: break-word;
+}
+
+#widgetBody
+{
+    margin : 0;
+}
+
+body
+{
+    /* position: absolute; */
+}
+
+#ribbon-container.textRibbon
+{
+    background-image      : url('./img/AnyFont-Ribbon-Right.png');
+    background-size       : contain;
+    background-position-x : 100%;
+}
+
+#textBox
+{
+    width : calc(100% - 90px);
+}
+
+#widget-container
+{
+    width : 100%;
+}
+
+#ribbon-container
+{
+    height            : 100%;
+    position          : absolute;
+    width             : 50%;
+    right             : 0;
+    background-size   : contain;
+    background-repeat : no-repeat;
+    max-width         : 90px;
+}
+
+@media all and (max-height : 100px)
+{
+    #ribbon-container.textRibbon
+    {
+        background-image : url('./img/AnyFont-Ribbon-Straight.png');
+        max-width        : 84px;
+    }
+}
+
+@media all and (max-width : 450px)
+{
+    #ribbon-container.textRibbon
+    {
+        background-image : url('./img/AnyFont-Ribbon-Straight.png');
+        max-width        : 84px;
+    }
+}
+
+.ui-resizable-helper
+{
+    border : 1px dotted gray;
+}
+
+.resizable
+{
+    display  : block;
+    /*width    : 400px;*/
+    /*height   : 940px;*/
+    /*padding  : 30px;*/
+    border   : 2px solid gray;
+    overflow : hidden;
+    position : relative;
+}
+
+iframe
+{
+}
+
+.textBox p
+{
+    -webkit-margin-before : 0em;
+    -webkit-margin-after  : 0em;
+    /*-webkit-margin-start  : 0px;*/
+    /*-webkit-margin-end    : 0px;*/
+}

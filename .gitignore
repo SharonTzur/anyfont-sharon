@@ -1,0 +1,10 @@
+.idea
+credentials.json
+WixKey.js
+*.iml
+out
+gen
+node_modules
+.bin
+uploads/*.ttf
+uploads/*.otf

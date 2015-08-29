@@ -1,0 +1,139 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.3/webfontloader.js"></script>
+<script>
+
+	/*
+	 (function ()
+	 {
+	 var wf = document.createElement('script');
+	 wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	 '://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js';
+	 wf.type = 'text/javascript';
+	 wf.async = 'true';
+	 var s = document.getElementsByTagName('script')[0];
+	 s.parentNode.insertBefore(wf, s);
+
+	 })();
+	 */
+
+	$(document).ready(function ()
+	{
+
+		WebFont.load({
+			google: {
+				families: [
+					"Roboto:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i",
+//					"Ubuntu:300,400,500,700,300i,400i,500i,700i"
+				]
+			}
+		});
+	});
+
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GetGems FB Canvas</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link href="../gems/gems.css" rel="stylesheet" type="text/css">
+	<script>
+		window.fbAsyncInit = function ()
+		{
+			FB.init({
+				appId  : '927758770628695',
+				xfbml  : true,
+				version: 'v2.3'
+			});
+
+			function onLogin(response)
+			{
+				/*
+				 if (response.status == 'connected')
+				 {
+				 FB.api('/me?fields=first_name', function (data)
+				 {
+				 var welcomeBlock = document.getElementById('fb-welcome');
+				 welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+				 });
+				 }
+				 */
+			}
+
+			FB.getLoginStatus(function (response)
+			{
+				// Check login status on load, and if the user is
+				// already logged in, go directly to the welcome message.
+				if (response.status == 'connected')
+				{
+					onLogin(response);
+				} else
+				{
+					// Otherwise, show Login dialog first.
+					FB.login(function (response)
+					{
+						onLogin(response);
+					}, {scope: 'user_friends, email'});
+				}
+			});
+
+
+		};
+
+		(function (d, s, id)
+		{
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+			{
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		/*
+		 $(document).ready(function () {
+		 });
+		 */
+
+	</script>
+
+</head>
+<body class="grad">
+<!--<div class="parallax-overlay"></div>-->
+<!--<h1 id="fb-welcome"></h1>-->
+
+<div class="text-area">
+
+	<div class="small-title-wrapper">
+		<div class="gems-logo"></div>
+
+		<div class="small-title">get<span>gems.</span> Telegram with payment and rewards</div>
+	</div>
+	<div class="divider"></div>
+	<div class="large-title">
+		GET REWARDED FOR BEING SOCIAL
+	</div>
+	<div class="store-links">
+		<a href="https://itunes.apple.com/app/id942306232" target="_blank">
+			<div class="store-link" style="background-image: url('../gems/app-store-black.svg')"></div>
+		</a>
+
+		<a href="https://play.google.com/store/apps/details?id=org.getgemsmessenger.app" target="_blank">
+			<div class="store-link"
+			     style="width: 157px; background-image: url('../gems/google-play-white.png')"></div>
+		</a>
+	</div>
+</div>
+
+
+<div class="wide gems"></div>
+<div class="wide people"></div>
+
+
+</body>
+</html>
